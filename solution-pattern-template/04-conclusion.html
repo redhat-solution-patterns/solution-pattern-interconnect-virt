@@ -3,8 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Untitled :: Solution Patterns for Cloud Native Architectures</title>
-    <link rel="canonical" href="https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern-template/01-pattern.html">
+    <title>Solution Pattern: Name Template :: Solution Patterns for Cloud Native Architectures</title>
+    <link rel="canonical" href="https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern-template/04-conclusion.html">
+    <link rel="prev" href="03-demo.html">
+    <link rel="next" href="05-developer-resources.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../_/css/site.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -115,7 +117,7 @@
   </li>
 </ul>
   </li>
-  <li class="nav-item" data-depth="1">
+  <li class="nav-item is-current-page" data-depth="1">
     <a class="nav-link" href="04-conclusion.html">4. Conclusion</a>
   </li>
   <li class="nav-item" data-depth="1">
@@ -153,39 +155,26 @@
 <button class="nav-toggle"></button>
   <a href="index.html" class="home-link"></a>
 <nav class="breadcrumbs" aria-label="breadcrumbs">
+  <ul>
+    <li><a href="index.html">Template Tutorial</a></li>
+    <li><a href="04-conclusion.html">4. Conclusion</a></li>
+  </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/rpscodes/solution-pattern-interconnect-virt/edit/main/documentation/modules/ROOT/pages/01-pattern.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/rpscodes/solution-pattern-interconnect-virt/edit/main/documentation/modules/ROOT/pages/04-conclusion.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<div class="sect1">
-<h2 id="_the_story_behind_this_solution_pattern"><a class="anchor" href="#_the_story_behind_this_solution_pattern"></a>The story behind this solution pattern</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Instamedi, a fictional health tech company that builds portal for patients and doctors for its group of hospitals, has decided to move it&#8217;s applications from a traditional hypervisor platform to Red Hat OpenShift Virtualization. This enables them to have a platform that addresses their current needs while also preparing them for future modernization and change all while enhancing the operational efficiency. Red Hat OpenShift Virtualization offers a compelling solution by allowing organizations to run both virtual machines (VMs) and containers on a single, unified platform. By migrating virtual machines from other platforms and running them on Red Hat OpenShift, they could get the most from their existing virtualization investments while taking advantage of cloud-native architectures, streamlined operations and management, and new development approaches.</p>
-</div>
-<div class="paragraph">
-<p>To ensure a smooth transition from traditional hypervisors like VMware vSphere to Red Hat OpenShift Virtualization, Instamedi must adopt a phased migration strategy that minimizes downtime and disruption to its healthcare services. Given the critical nature of patient and doctor portals, maintaining uninterrupted access is essential. The traffic switchover from the services in the existing hypervisor to OpenShift Virtualization will be handled carefully to ensure zero downtime. This involves gradually redirecting traffic to services running on OpenShift virtualization while maintaining connectivity to the original VMs until the full migration is complete. Additionally, Instamedi aims to reduce the complexity involved in building and managing complex networking systems. By doing so, Instamedi can mitigate risks, maintain service continuity, and avoid disruptions to daily operations, all while efficiently transitioning to a more modern and scalable infrastructure.</p>
+<h1 class="page">Solution Pattern: Name Template</h1>
+<h1 id="_conclusion" class="sect0"><a class="anchor" href="#_conclusion"></a><a class="link" href="#_conclusion">Conclusion</a></h1>
+<div class="openblock partintro">
+<div class="content">
+Through this solution pattern we&#8217;ve seen how Red Hat&#8217;s integrated approach with OpenShift Virtualization and Service Interconnect provides a practical solution for gradually migrating VMs from hypervisor platforms such as vSphere to OpenShift virtualization. Service Interconnect plays a pivotal role by ensuring continuous service availability and connectivity during migrations. By leveraging Service Interconnect alongside OpenShift Virtualization, organizations can navigate hybrid cloud environments with confidence, ultimately achieving greater agility and operational efficiency.
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_the_solution"><a class="anchor" href="#_the_solution"></a>The Solution</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>Instamedi decided to use implement <strong>Red Hat Service Interconnect</strong> as a key component of its migration strategy to simplify connectivity across its diverse environments. By leveraging the advanced Layer 7 addressing and routing capabilities of Service Interconnect, Instamedi ensured seamless communication between its applications during and after the migration process. This solution allowed their applications to communicate effortlessly across both the traditional hypervisor platform and OpenShift Virtualization, even as components were gradually moved or updated. Service Interconnect&#8217;s anycast/multicast capabilities, enabled multiple instances of a service deployed in different destinations to use the same service address. This streamlined routing of requests to instances of a single service, regardless of whether they were running - original hypervisor or OpenShift Virtualization. If a VM is disconnected or a service is undeployed post-migration, traffic is automatically and seamlessly switched over to newly migrated service instances that are using the same address, ensuring continuous operation without disruption.</p>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_additonal_context_and_resources"><a class="anchor" href="#_additonal_context_and_resources"></a>Additonal Context and Resources</h2>
-<div class="sectionbody">
-<div class="paragraph">
-<p>*
-* <a href="https://www.redhat.com/en/engage/15-reasons-adopt-openshift-virtualization-ebook">15-reasons-adopt-openshift-virtualization-ebook</a></p>
-</div>
-</div>
-</div>
+<nav class="pagination">
+  <span class="prev"><a href="03-demo.html" class="query-params-link">3. See the Solution in Action</a></span>
+  <span class="next"><a href="05-developer-resources.html" class="query-params-link">5. Developer Resources</a></span>
+</nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
   <div class="toc-menu"></div>

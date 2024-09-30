@@ -6,7 +6,7 @@
     <title>Solution Pattern: Name Template :: Solution Patterns for Cloud Native Architectures</title>
     <link rel="canonical" href="https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern-template/03-demo.html">
     <link rel="prev" href="02-architecture.html">
-    <link rel="next" href="developer-resources.html">
+    <link rel="next" href="04-conclusion.html">
     <meta name="generator" content="Antora 3.0.0">
     <link rel="stylesheet" href="../_/css/site.css">
 <link rel="icon" href="../_/img/favicon.ico" type="image/x-icon">
@@ -118,7 +118,10 @@
 </ul>
   </li>
   <li class="nav-item" data-depth="1">
-    <a class="nav-link" href="developer-resources.html">4. Developer Resources</a>
+    <a class="nav-link" href="04-conclusion.html">4. Conclusion</a>
+  </li>
+  <li class="nav-item" data-depth="1">
+    <a class="nav-link" href="05-developer-resources.html">5. Developer Resources</a>
   </li>
   <li class="nav-item" data-depth="1">
     <span class="nav-text"><a href="https://redhat-solution-patterns.github.io/solution-patterns/patterns.html" target="_blank" rel="noopener">Explore Red Hat Solution Patterns</a></span>
@@ -213,14 +216,14 @@
 <div class="sect2">
 <h3 id="_installing_the_demo"><a class="anchor" href="#_installing_the_demo"></a><a class="link" href="#_installing_the_demo">2.2. Installing the demo</a></h3>
 <div class="paragraph">
-<p>Run the following setup scripts in the respective environment:</p>
+<p>Run the following setup scripts in the respective environments:</p>
 </div>
 <div class="paragraph">
 <p>Hypervisor VM:</p>
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./vmware_setup.sh</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -s <a href="https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/vmware_setup.sh" class="bare">https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/vmware_setup.sh</a></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -228,7 +231,7 @@
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./openshift_virt_setup.sh</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -s <a href="https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/openshift_virt_setup.sh" class="bare">https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/openshift_virt_setup.sh</a></code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -236,16 +239,12 @@
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./openshift_cluster_setup.sh</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -s <a href="https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/openshift-cluster-setup.sh" class="bare">https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/openshift-cluster-setup.sh</a> | bash</code></pre>
 </div>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_walkthrough_guide"><a class="anchor" href="#_walkthrough_guide"></a><a class="link" href="#_walkthrough_guide">2.3. Walkthrough guide</a></h3>
-
-</div>
-<div class="sect2">
-<h3 id="_connecting_the_services_in_the_openshift_cluster_to_the_hypervisor_vm_with_red_hat_service_interconnect"><a class="anchor" href="#_connecting_the_services_in_the_openshift_cluster_to_the_hypervisor_vm_with_red_hat_service_interconnect"></a><a class="link" href="#_connecting_the_services_in_the_openshift_cluster_to_the_hypervisor_vm_with_red_hat_service_interconnect">2.4. Connecting the services in the OpenShift cluster to the Hypervisor VM with Red Hat Service Interconnect</a></h3>
+<h3 id="_connecting_the_services_in_the_openshift_cluster_to_the_hypervisor_vm_with_red_hat_service_interconnect"><a class="anchor" href="#_connecting_the_services_in_the_openshift_cluster_to_the_hypervisor_vm_with_red_hat_service_interconnect"></a><a class="link" href="#_connecting_the_services_in_the_openshift_cluster_to_the_hypervisor_vm_with_red_hat_service_interconnect">2.3. Connecting the services in the OpenShift cluster to the Hypervisor VM with Red Hat Service Interconnect</a></h3>
 <div class="ulist">
 <ul>
 <li>
@@ -262,7 +261,7 @@
 </div>
 </li>
 <li>
-<p>First Initialize Red Hat Service Interconnect router in the <strong>OpenShift Cluster</strong>, in the namespace where front end is running:</p>
+<p>First Initialize Red Hat Service Interconnect router in the <strong>OpenShift Cluster</strong>, in the namespace where the front end is running:</p>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc project frontend
@@ -270,7 +269,7 @@ skupper init --enable-console --enable-flow-collector --console-auth unsecured</
 </div>
 </div>
 <details>
-<summary class="title">Learn more about the functions and the attributes of the router</summary>
+<summary class="title"><span class="underline">Learn more about the functions and the attributes of the router</span></summary>
 <div class="content">
 <div class="sidebarblock">
 <div class="content">
@@ -312,7 +311,7 @@ skupper init --enable-console --enable-flow-collector --console-auth unsecured</
 </div>
 </div>
 <details>
-<summary class="title">Learn more about the functions and the attributes of the token</summary>
+<summary class="title"><span class="underline">Learn more about the functions and the attributes of the token</span></summary>
 <div class="content">
 <div class="sidebarblock">
 <div class="content">
@@ -365,7 +364,7 @@ skupper init</code></pre>
 </div>
 </div>
 <details>
-<summary class="title">Learn more about the link</summary>
+<summary class="title"><span class="underline">Learn more about the link</span></summary>
 <div class="content">
 <div class="sidebarblock">
 <div class="content">
@@ -401,7 +400,7 @@ skupper expose host portal-payments --address payment-processor --port 8080 --pr
 </div>
 </li>
 <li>
-<p>Create the corresponding virtual service on the <strong>OpenShift Cluster</strong>. The Service Interconnect router will use the virtual service will be used to route the traffic to the Hypervisor VM. The frontend will call this local services to database and payment processor access without realizing that they are remote services. This makes the remote service really portable. As long as they are exposed using the same service name on the network, the frontend should be able to communicate with them irrespective of where they are deployed.</p>
+<p>Create the corresponding virtual service on the <strong>OpenShift Cluster</strong>. The Service Interconnect router will use this virtual service to route the traffic to the Hypervisor VM. The frontend will call this local services to access the database and payment processor without realizing that they are remote services. This makes the remote service really portable. As long as they are exposed using the same service name on the network, the frontend should be able to communicate with them irrespective of where they are deployed.</p>
 <div class="listingblock console-input">
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">skupper service create database 5432
@@ -454,11 +453,15 @@ skupper service create payment-processor 8080 --protocol http</code></pre>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_connect_the_openshift_cluster_frontend_to_the_openshift_virtualization_vm_database_and_payment_processor"><a class="anchor" href="#_connect_the_openshift_cluster_frontend_to_the_openshift_virtualization_vm_database_and_payment_processor"></a><a class="link" href="#_connect_the_openshift_cluster_frontend_to_the_openshift_virtualization_vm_database_and_payment_processor">2.5. Connect the OpenShift Cluster (frontend) to the OpenShift Virtualization VM (Database and Payment Processor)</a></h3>
+<h3 id="_connect_the_openshift_cluster_frontend_to_the_openshift_virtualization_vm_database_and_payment_processor"><a class="anchor" href="#_connect_the_openshift_cluster_frontend_to_the_openshift_virtualization_vm_database_and_payment_processor"></a><a class="link" href="#_connect_the_openshift_cluster_frontend_to_the_openshift_virtualization_vm_database_and_payment_processor">2.4. Connect the OpenShift Cluster (frontend) to the OpenShift Virtualization VM (Database and Payment Processor)</a></h3>
 <div class="paragraph">
-<p>The task now is to gradually migrate all the components from the Hypervisor platform to the OpenShift Virtualization.Below are some conditions to follow while migrating the components.
-* No downtime during and after the migrations
-* No code changes to the front application.</p>
+<p>The task now is to gradually migrate all the components from the Hypervisor platform to the OpenShift Virtualization. Below are some conditions to follow while migrating the components.</p>
+</div>
+<div class="listingblock">
+<div class="content">
+<pre>* No downtime during and after the migrations
+* No code changes to the front application.</pre>
+</div>
 </div>
 <div class="ulist">
 <ul>
@@ -580,7 +583,7 @@ skupper expose host portal-payments --address payment-processor --port 8080 --pr
 </div>
 <nav class="pagination">
   <span class="prev"><a href="02-architecture.html" class="query-params-link">2. Architecture</a></span>
-  <span class="next"><a href="developer-resources.html" class="query-params-link">4. Developer Resources</a></span>
+  <span class="next"><a href="04-conclusion.html" class="query-params-link">4. Conclusion</a></span>
 </nav>
 </article>
 <aside class="toc sidebar" data-title="Contents" data-levels="2">
