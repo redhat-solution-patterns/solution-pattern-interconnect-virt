@@ -1,14 +1,14 @@
-= Solution Patterns: Template Name
+= Solution Patterns: Minimize downtime when migrating your applications from hypervisor based environments to OpenShift Virtualization
 :page-layout: home
 :sectnums:
 :sectlinks:
 :doctype: book
 
-A brief introduction of this solution pattern.
+Migrating applications from one platform to the other requires a thoughtful, phased approach. For example, let's consider an enterprise is transitioning from transitioning from traditional hypervisor solutions like VMware vSphere to OpenShift Virtualization. Factors such as application dependencies, regulatory compliance, budget constraints, and resource availability often necessitate a phased migration approach to minimize disruption and maximize the benefits.  This gradual shift allows organizations to mitigate risks and ensure continuity while migrating to OpenShift virtualization. The traffic switchover from services running on existing hypervisor platforms to OpenShift Virtualization must be disruption-free with zero downtime. Additionally, connectivity to the existing VMs in the hypervisor needs to be maintained until all components are migrated.
 
-_Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum_
+This solution pattern demonstrates how a locationless connectivity solution enabled by Red Hat Service interconnect can leveraged for a disruption free migration and switchover between environments (Vmware to Openshift Virtualization in this example) with almost zero downtime. 
 
-*Contributors:* _Your Name(s) here (can add links to your profile)_
+*Contributors:* _Vamsi Ravula (Red Hat)_
 
 ++++
  <br>
@@ -20,9 +20,11 @@ Solutions Patterns help you understand the art of the possible with Red Hat's po
 [#use-cases]
 == Use cases
 
-Common use cases that can be address with this architecture are:
+Though this pattern deals with moving applications and services, from traditional hypervisor platforms such as VMware to OpenShift virtualization, the same concepts can be applied to number of other use cases such as the ones listed below:
 
-- xyz
-- xyz
+- Migration from an older version of OpenShift/Kubernetes to a newer version. Ex: OpenShift 3 to 4 migration
+- Distributing and moving services across multiple kubernetes clusters (cloud or on-prem)without any downtime
+- Moving applications across different kubernetes offerings. Ex: Vanilla kubernetes to OpenShift, AKS/EKS to OpenShift
+
 
 include::01-pattern.adoc[]
