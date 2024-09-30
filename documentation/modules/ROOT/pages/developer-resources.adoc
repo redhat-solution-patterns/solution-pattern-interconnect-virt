@@ -8,5 +8,5 @@
 
 * https://www.redhat.com/en/engage/15-reasons-adopt-openshift-virtualization-ebook[15-reasons-adopt-openshift-virtualization-ebook]
 * https://docs.redhat.com/en/documentation/red_hat_service_interconnect/1.5[Red Hat Service Interconnect Documentation]
-* https://developers.redhat.com/products/service-interconnect/getting-started [Getting Started with Red hat Service Interconnect]
+* https://developers.redhat.com/products/service-interconnect/getting-started[Getting Started with Red hat Service Interconnect]
 
