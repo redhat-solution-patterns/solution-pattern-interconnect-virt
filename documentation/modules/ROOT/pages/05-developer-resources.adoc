@@ -1,4 +1,4 @@
-= Solution Patterns: Template Name
+= Solution Patterns: Minimize downtime when migrating your applications from hypervisor based environments to OpenShift Virtualization
 :sectnums:
 :sectlinks:
 :doctype: book
