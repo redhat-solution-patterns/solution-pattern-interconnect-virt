@@ -4,9 +4,9 @@
 :sectlinks:
 :doctype: book
 
-Migrating applications from one platform to the other requires a thoughtful, phased approach. For example, let's consider an enterprise is transitioning from transitioning from traditional hypervisor solutions like VMware vSphere to OpenShift Virtualization. Factors such as application dependencies, regulatory compliance, budget constraints, and resource availability often necessitate a phased migration approach to minimize disruption and maximize the benefits.  This gradual shift allows organizations to mitigate risks and ensure continuity while migrating to OpenShift virtualization. The traffic switchover from services running on existing hypervisor platforms to OpenShift Virtualization must be disruption-free with zero downtime. Additionally, connectivity to the existing VMs in the hypervisor needs to be maintained until all components are migrated.
+Migrating applications from one platform to the other requires a thoughtful, phased approach. For example, let's consider an enterprise that is transitioning from traditional hypervisor solutions like VMware vSphere to *OpenShift Virtualization*. Factors such as application dependencies, regulatory compliance, budget constraints, and resource availability often necessitate a phased migration approach to minimize disruption and maximize the benefits.  This gradual shift allows organizations to mitigate risks and ensure continuity while migrating to OpenShift virtualization. The traffic switchover from services running on existing hypervisor platforms to OpenShift Virtualization must be disruption-free with zero downtime. Additionally, connectivity to the existing VMs in the hypervisor needs to be maintained until all components are migrated.
 
-This solution pattern demonstrates how a locationless connectivity solution enabled by Red Hat Service interconnect can leveraged for a disruption free migration and switchover between environments (Vmware to Openshift Virtualization in this example) with almost zero downtime. 
+This solution pattern demonstrates how a locationless connectivity solution enabled by Red Hat Service interconnect can be leveraged for a disruption free migration and switchover between environments (Vmware to Openshift Virtualization in this example) with almost zero downtime. 
 
 *Contributors:* _Vamsi Ravula (Red Hat)_
 

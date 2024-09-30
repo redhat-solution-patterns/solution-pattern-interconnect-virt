@@ -34,32 +34,30 @@ To set up the demo, you will need the following prerequisites:
 * An OpenShift cluster to deploy the frontend of the application.
 
 === Installing the demo
-Run the following setup scripts in the respective environment:
+Run the following setup scripts in the respective environments:
 
 Hypervisor VM:
 [.console-input]
 [source, bash,subs="+macros,+attributes"]
 ---- 
-./vmware_setup.sh
+curl -s https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/vmware_setup.sh
 ----
 
 OpenShift Virtualization:
 [.console-input]
 [source, bash,subs="+macros,+attributes"]
 ---- 
-./openshift_virt_setup.sh
+curl -s https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/openshift_virt_setup.sh
 ----
 
 OpenShift cluster:
 [.console-input]
 [source, bash,subs="+macros,+attributes"]
 ---- 
-./openshift_cluster_setup.sh
+curl -s https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/openshift-cluster-setup.sh | bash
 ----
 
 
-
-=== Walkthrough guide
 
 === Connecting the services in the OpenShift cluster to the Hypervisor VM with Red Hat Service Interconnect
 
@@ -70,7 +68,7 @@ image::openshift_topology.png[width=80%]
 image::empty_portal.png[width=80%]
 
 
-* First Initialize Red Hat Service Interconnect router in the *OpenShift Cluster*, in the namespace where front end is running:
+* First Initialize Red Hat Service Interconnect router in the *OpenShift Cluster*, in the namespace where the front end is running:
 +
 [.console-input]
 [source, bash,subs="+macros,+attributes"]
@@ -79,7 +77,7 @@ oc project frontend
 skupper init --enable-console --enable-flow-collector --console-auth unsecured
 ----
 +
-.Learn more about the functions and the attributes of the router
+.[underline]#Learn more about the functions and the attributes of the router#
 [%collapsible]
 ====
 ******
@@ -103,7 +101,7 @@ Service Interconnect router is the key component for establishing connectivity b
 skupper token create secret_vmware.token
 ----
 +
-.Learn more about the functions and the attributes of the token
+.[underline]#Learn more about the functions and the attributes of the token#
 [%collapsible]
 ====
 ******
@@ -146,7 +144,7 @@ vi secret_vmware.token
 skupper link create secret_vmware.token --name openshift-to-vm
 ----
 +
-.Learn more about the link
+.[underline]#Learn more about the link#
 [%collapsible]
 ====
 ******
@@ -168,7 +166,7 @@ skupper expose host portal-payments --address payment-processor --port 8080 --pr
 ----
 
 
-* Create the corresponding virtual service on the *OpenShift Cluster*. The Service Interconnect router will use the virtual service will be used to route the traffic to the Hypervisor VM. The frontend will call this local services to database and payment processor access without realizing that they are remote services. This makes the remote service really portable. As long as they are exposed using the same service name on the network, the frontend should be able to communicate with them irrespective of where they are deployed.
+* Create the corresponding virtual service on the *OpenShift Cluster*. The Service Interconnect router will use this virtual service to route the traffic to the Hypervisor VM. The frontend will call this local services to access the database and payment processor without realizing that they are remote services. This makes the remote service really portable. As long as they are exposed using the same service name on the network, the frontend should be able to communicate with them irrespective of where they are deployed.
 +
 [.console-input]
 [source, bash,subs="+macros,+attributes"]
@@ -200,9 +198,11 @@ image::vmware_payment.png[width=70%]
 
 
 === Connect the OpenShift Cluster (frontend) to the OpenShift Virtualization VM (Database and Payment Processor)
-The task now is to gradually migrate all the components from the Hypervisor platform to the OpenShift Virtualization.Below are some conditions to follow while migrating the components.
+The task now is to gradually migrate all the components from the Hypervisor platform to the OpenShift Virtualization. Below are some conditions to follow while migrating the components.
+----
 * No downtime during and after the migrations
 * No code changes to the front application.
+----
 
 * Initialize Red Hat Service Interconnect router in the *OpenShift Virtualization environment*
 +

@@ -31,23 +31,23 @@ Applications and services across environments can communicate with each other us
 [#in_depth]
 == An in-depth look at the solution's architecture
 
-InstaMedi's patient portal application consists of 3 key components.
+Instamedi's patient portal application consists of 3 key components.
 
-* Frontend - A web front-end service that uses the PostgreSQL database and a payment processor deployed in a private cluster to display the names of doctors and patients and process the payments.
-* PostgreSQL database - Stores a list of patients, doctors and the bills owed by patients
-* Payment Processor - To process the payments made by the patients and indicate the location (environment) where the payment was processed. 
+* *Frontend* - A web front-end service that uses the PostgreSQL database and a payment processor deployed in a private cluster to display the names of doctors and patients and process the payments.
+* *PostgreSQL database* - Stores a list of patients, doctors and the bills owed by patients
+* *Payment Processor* - To process the payments made by the patients and indicate the location (environment) where the payment was processed. 
 
-The frontend is deployed on an OpenShift cluster. Both the database and the payment processor are deployed on a VM running of one of the traditional hypervisor platform. InstaMedi, wants to migrate all the components from the traditional hypervisor platform to OpenShift virtualization, without having any downtime. Initially there are no components running on OpenShift Virtualization. 
+The frontend is deployed on an OpenShift cluster. Both the database and the payment processor are deployed on a VM running of one of the traditional hypervisor platform. Instamedi, wants to migrate all the components from the traditional hypervisor platform to OpenShift virtualization, without having any downtime. Initially there are no components running on OpenShift Virtualization. 
 
 The frontend is connected to the other components through a Virtual Application Network enabled by Red Hat Service Interconnect. Once a service is exposed over network, Service Interconnect router creates a virtual local service in the OpenShift environment. The frontend connects to these services as if they are local services and the router takes care of routing the call to the correct destination. The frontend is not aware of location of the actual services.   
 
 image::openshift_connected_to_vmware.png[width=70%]
 
-They gradually migrate the components one by one. This is how Instamedi's environment would look like during the middle of the transitioning stage. All the instances on the database and payment service running on both the hypervisor platform and OpenShift Virtualization, are explicitly given the same service address on the network, so that they point to the same virtual service/proxy on the OpenShift cluster. This also ensures that no changes are made to the frontend since the service name that it refers to remains constant irrespective of where the database and payment processor components are deployed. The multicast capabilities of Service Interconnect ensure that the load is balanced between the two instances. This way Instamedi can have both the environment simultaneously running until they complete all the tests and are sure to decommission the old environment.
+They gradually migrate the components one by one. This is how Instamedi's environment would look like during the middle of the transitioning stage. All the instances of the database and payment service running on both the hypervisor platform and OpenShift Virtualization, are explicitly given the same service address on the network, so that they point to the same virtual service/proxy on the OpenShift cluster. This also ensures that no changes are made to the frontend since the service name that it refers to remains constant irrespective of where the database and payment processor components are deployed. The multicast capabilities of Service Interconnect ensure that the load is balanced between the two instances. This way Instamedi can have both the environment simultaneously running until they complete all the tests and are sure to decommission the old environment.
 
 image::active_active_load.png[width=70%]
 
-Finally, once the migration team is completely sure that everything is running smoothly, they can decommission the old environment. The network between the Openshift cluster and the traditional hypervisor platform is delete, using a single command. Once this is done, Service Interconnect automatically reroutes all the traffic to the service running in theOpenShift Virtualization environment. All this is done without making any changes to the frontend, database or the payment processor. In fact, the frontend team doesn't even realise that a migration has happened, since there was no code change and no downtime.
+Finally, once the migration team is completely sure that everything is running smoothly, they can decommission the old environment. The network between the Openshift cluster and the traditional hypervisor platform is deleted, using a single command. Once this is done, Service Interconnect automatically reroutes all the traffic to the service running in theOpenShift Virtualization environment. All this is done without making any changes to the frontend, database or the payment processor. In fact, the frontend team doesn't even realise that a migration has happened, since there was no code change and no downtime.
 
 image::failover_reroute.png[width=70%]
 
