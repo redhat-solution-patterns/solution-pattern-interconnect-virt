@@ -13,52 +13,44 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body class="article">
-<!-- Google tag (gtag.js) -->
-
-<!--
-  replace this with Google tag content
--->
-
-<!-- Google tag (gtag.js) -->
 <header class="header">
-
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" style="font-size: 20px; color: white"
         href="https://redhat-solution-patterns.github.io/solution-patterns">
         <img src="../_/img/logo.png" height="35px" alt="Solution Patterns">&nbsp; Solution Patterns for Cloud Native Architectures</a>
       <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Architectures &amp; Patterns</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://www.redhat.com/architect/portfolio/" target="_blank">Portfolio Architecture&nbsp; </a>
+            <a class="navbar-item" href="https://redhat-solution-patterns.github.io/solution-patterns/patterns.html"  target="_blank">Solution Patterns </a>
+            <a class="navbar-item" href="https://validatedpatterns.io/" target="_blank">Validated Patterns&nbsp;</a>
+            <a class="navbar-item" href="https://catalog.redhat.com/solutions" target="_blank">Ecosystem Solutions&nbsp;</a>
+          </div>
+        </div>
 
-    <div class="navbar-item"><span class="navbar-text"
-        style="color: white; margin-left: 1rem; margin-right: 1rem;">|</span></div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" target="_blank" href="https://developers.redhat.com">Red Hat Developers</a>
+            <a class="navbar-item" target="_blank" href="https://developers.redhat.com/app-dev-platform">App Dev Platform</a>
+            <a class="navbar-item" target="_blank" href="https://www.redhat.com/en/products/application-foundations">Red Hat Application Services</a>
+          </div>
+        </div>
 
-    <div class="navbar-item has-dropdown is-hoverable">
-      <a class="navbar-link" href="#" style="color: white">Architectures &amp; Patterns</a>
-      <div class="navbar-dropdown">
-        <a class="navbar-item" href="https://www.redhat.com/architect/portfolio/" target="_blank">Portfolio Architecture&nbsp; </a>
-        <a class="navbar-item" href="https://redhat-solution-patterns.github.io/solution-patterns/patterns.html" target="_blank">Solution Patterns </a>
-        <a class="navbar-item" href="https://validatedpatterns.io/" target="_blank">Validated Patterns&nbsp;</a>
-        <a class="navbar-item" href="https://catalog.redhat.com/solutions" target="_blank">Ecosystem Solutions&nbsp;</a>
+          <a class="navbar-item" target="_blank" href="https://github.com/redhat-solution-patterns/redhat-solution-patterns.github.io/issues">Feedback</a>
+          <a class="navbar-item" target="_blank" href="https://redhat-solution-patterns.github.io/solution-patterns/contributors-guide.html">Contribute</a>
+
       </div>
     </div>
-
-    <div class="navbar-item has-dropdown is-hoverable">
-      <a class="navbar-link" href="#" style="color: white">Resources</a>
-      <div class="navbar-dropdown">
-        <a class="navbar-item" target="_blank" href="https://developers.redhat.com">Red Hat Developers</a>
-        <a class="navbar-item" target="_blank" href="https://developers.redhat.com/app-dev-platform">App Dev Platform</a>
-        <a class="navbar-item" target="_blank" href="https://www.redhat.com/en/products/application-foundations">Red Hat Application Services</a>
-      </div>
-    </div>
-
-
-
-    <a class="navbar-item" style="color: white" target="_blank" href="https://github.com/redhat-solution-patterns/redhat-solution-patterns.github.io/issues">Feedback</a>
-
-    <a class="navbar-item" style="color: white" target="_blank" href="https://redhat-solution-patterns.github.io/solution-patterns/contributors-guide.html">Contribute</a>
-
   </nav>
 </header>
 <div class="body">
@@ -186,7 +178,7 @@
     <li><a href="03-demo.html">3. See the Solution in Action</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/redhat-solution-patterns/solution-pattern-website-template/edit/main/documentation/modules/ROOT/pages/03-demo.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/rpscodes/solution-pattern-interconnect-virt/edit/main/documentation/modules/ROOT/pages/03-demo.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
@@ -201,11 +193,11 @@
 <div class="sect2">
 <h3 id="demo-video"><a class="anchor" href="#demo-video"></a><a class="link" href="#demo-video">1.1. Watch a demonstration</a></h3>
 <div class="paragraph">
-<p>In this video you can see xpto:</p>
+<p>In this video you can see a quick demonstration of the solution:</p>
 </div>
 <div class="videoblock">
 <div class="content">
-<iframe width="800" height="480" src="https://www.youtube.com/embed/3yULVMdqJ98?rel=0" frameborder="0" allowfullscreen></iframe>
+<iframe width="800" height="480" src="https://www.youtube.com/embed/8sfG6NPnzlY?rel=0" frameborder="0" allowfullscreen></iframe>
 </div>
 </div>
 <div class="paragraph">
@@ -220,18 +212,21 @@
 <div class="sect2">
 <h3 id="_before_getting_started"><a class="anchor" href="#_before_getting_started"></a><a class="link" href="#_before_getting_started">2.1. Before getting started</a></h3>
 <div class="paragraph">
-<p>To run this demo, you will need xpto. Adding to that, make sure to have:</p>
+<p>To set up the demo, you will need the following prerequisites:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>ABC</p>
+<p>A virtual machine running RHEL 9 on any of the VMware platforms. Vsphere, VMware fusion or VMware workstation . We will deploy the database and payment processor here.</p>
 </li>
 <li>
-<p>XYZ</p>
+<p>A similar virtual machine running RHEL 9 on OpenShift Virtualization. We will migrate the payment processor here. You can try it for free in the <a href="https://developers.redhat.com/products/openshift/virtualization">Red Hat Developer Sandbox</a></p>
 </li>
 <li>
-<p>XPTO</p>
+<p>Install podman on both the VMs to run the application containers.</p>
+</li>
+<li>
+<p>An OpenShift cluster to deploy the frontend of the application.</p>
 </li>
 </ul>
 </div>
@@ -239,13 +234,367 @@
 <div class="sect2">
 <h3 id="_installing_the_demo"><a class="anchor" href="#_installing_the_demo"></a><a class="link" href="#_installing_the_demo">2.2. Installing the demo</a></h3>
 <div class="paragraph">
-<p>Installation guide and basic test of the demo installation if needed</p>
+<p>Run the following setup scripts in the respective environment:</p>
+</div>
+<div class="paragraph">
+<p>Hypervisor VM:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./vmware_setup.sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>OpenShift Virtualization:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./openshift_virt_setup.sh</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>OpenShift cluster:</p>
+</div>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">./openshift_cluster_setup.sh</code></pre>
+</div>
 </div>
 </div>
 <div class="sect2">
 <h3 id="_walkthrough_guide"><a class="anchor" href="#_walkthrough_guide"></a><a class="link" href="#_walkthrough_guide">2.3. Walkthrough guide</a></h3>
+
+</div>
+<div class="sect2">
+<h3 id="_connecting_the_services_in_the_openshift_cluster_to_the_hypervisor_vm_with_red_hat_service_interconnect"><a class="anchor" href="#_connecting_the_services_in_the_openshift_cluster_to_the_hypervisor_vm_with_red_hat_service_interconnect"></a><a class="link" href="#_connecting_the_services_in_the_openshift_cluster_to_the_hypervisor_vm_with_red_hat_service_interconnect">2.4. Connecting the services in the OpenShift cluster to the Hypervisor VM with Red Hat Service Interconnect</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>The setup scripts have already deployed the frontend in the OpenShift cluster and the database and payment processor in the Hypervisor VM. All these are currently not connected to each other. Let&#8217;s verify the same by looking at the Patient portal. Open the openshift route of the patient portal frontend deployed in the frontend namespace of the OpenShift cluster. It should look empty without any patient and doctor names.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/openshift_topology.png" alt="openshift topology" width="80%">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/empty_portal.png" alt="empty portal" width="80%">
+</div>
+</div>
+</li>
+<li>
+<p>First Initialize Red Hat Service Interconnect router in the <strong>OpenShift Cluster</strong>, in the namespace where front end is running:</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">oc project frontend
+skupper init --enable-console --enable-flow-collector --console-auth unsecured</code></pre>
+</div>
+</div>
+<details>
+<summary class="title">Learn more about the functions and the attributes of the router</summary>
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
 <div class="paragraph">
-<p>How to run through the demo</p>
+<p>Service Interconnect router is the key component for establishing connectivity between sites and is installed in all the sites in the network The Communication across the network happens between the routers. Below are the key functions and attributes of the router:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Routers establish links with assigned peers</p>
+</li>
+<li>
+<p>Determine  shortest path based on message exchange</p>
+</li>
+<li>
+<p>Exchange target address updates</p>
+</li>
+<li>
+<p>Delivery pattern (anycast, multicast)</p>
+</li>
+<li>
+<p>Automatic recovery to failure by re-routing</p>
+</li>
+<li>
+<p>Dynamic and stateless</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p>Create a secure connection token on the OpenShift cluster. The router in the Hypervisor VM will use this token to establish a secure connection with the OpenShift cluster.</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">skupper token create secret_vmware.token</code></pre>
+</div>
+</div>
+<details>
+<summary class="title">Learn more about the functions and the attributes of the token</summary>
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Creating a link between two environments(sites)requires explicit permission from the target site. This permission is granted using tokens. A token contains a URL for the target site and a secret key.</p>
+</li>
+<li>
+<p>Tokens can be restricted to a chosen number of uses inside a limited time window. By default, tokens allow only one use and expire after 15 minutes.
+*In this example, site Openshift cluster wishes to allow Hypervisor VM to create a link. Router in the OpenShift cluster creates a token. The VM then uses the token to create the link.</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p>Display the token and copy it in a text editor</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cat secret_vmware.token</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Initialize Service Interconnect router in the <strong>Hypervisor based VM</strong></p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export SKUPPER_PLATFORM=podman
+skupper init</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>After the router is initialized it will use the token to create the link. First create a file for the token on <strong>Hypervisor VM</strong> and copy the content of the token you copied.</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">vi secret_vmware.token</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create the link by running the following command in <strong>Hypervisor VM</strong></p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">skupper link create secret_vmware.token --name openshift-to-vm</code></pre>
+</div>
+</div>
+<details>
+<summary class="title">Learn more about the link</summary>
+<div class="content">
+<div class="sidebarblock">
+<div class="content">
+<div class="ulist">
+<ul>
+<li>
+<p>Sites use links to form a dedicated network for your application. These links are the basis for site-to-site and service-to-service communication.</p>
+</li>
+<li>
+<p>A link is a site-to-site communication channel. Links serve as a transport for application traffic such as connections and requests</p>
+</li>
+<li>
+<p>Links are always secured using mutual TLS authentication and encryption.</p>
+</li>
+<li>
+<p>Uni directional connectivity is enough to establish a bidirectional link</p>
+</li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+</details>
+</li>
+<li>
+<p>Expose the database and payment processor over the network by running this command in <strong>Hypervisor VM</strong> . The skupper expose command makes this service accessible across the Service Interconnect network.</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">skupper expose host portal-database --address database --port 5432
+
+skupper expose host portal-payments --address payment-processor --port 8080 --protocol http</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create the corresponding virtual service on the <strong>OpenShift Cluster</strong>. The Service Interconnect router will use the virtual service will be used to route the traffic to the Hypervisor VM. The frontend will call this local services to database and payment processor access without realizing that they are remote services. This makes the remote service really portable. As long as they are exposed using the same service name on the network, the frontend should be able to communicate with them irrespective of where they are deployed.</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">skupper service create database 5432
+
+skupper service create payment-processor 8080 --protocol http</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Refresh the frontend webpage in the browser and you should now be able to see a list of patients and doctors.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/portal_names.png" alt="portal names" width="70%">
+</div>
+</div>
+</li>
+<li>
+<p>Click on patient Angela Martin</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/angela.png" alt="angela" width="70%">
+</div>
+</div>
+</li>
+<li>
+<p>Go to the bills tab and make a payment</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/bill_tab.png" alt="bill tab" width="70%">
+</div>
+</div>
+</li>
+<li>
+<p>Submit the payment</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/payment_button.png" alt="payment button" width="70%">
+</div>
+</div>
+</li>
+<li>
+<p>You should see the payment processed and it shows where the payment has been processed. When we successfully migrate the payment processor, to a VM on OpenShift Virtualization, the field should show <strong>processed at openshift virt</strong>.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/vmware_payment.png" alt="vmware payment" width="70%">
+</div>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_connect_the_openshift_cluster_frontend_to_the_openshift_virtualization_vm_database_and_payment_processor"><a class="anchor" href="#_connect_the_openshift_cluster_frontend_to_the_openshift_virtualization_vm_database_and_payment_processor"></a><a class="link" href="#_connect_the_openshift_cluster_frontend_to_the_openshift_virtualization_vm_database_and_payment_processor">2.5. Connect the OpenShift Cluster (frontend) to the OpenShift Virtualization VM (Database and Payment Processor)</a></h3>
+<div class="paragraph">
+<p>The task now is to gradually migrate all the components from the Hypervisor platform to the OpenShift Virtualization.Below are some conditions to follow while migrating the components.
+* No downtime during and after the migrations
+* No code changes to the front application.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Initialize Red Hat Service Interconnect router in the <strong>OpenShift Virtualization environment</strong></p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">export SKUPPER_PLATFORM=podman
+
+skupper init</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Deploy the database and payment processor on the <strong>OpenShift Virtualization</strong> environment</p>
+<div class="ulist">
+<ul>
+<li>
+<p>For X86</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">podman run --name portal-database --detach --rm -p 5432:5432 --network skupper quay.io/redhatintegration/patient-portal-database:devnation
+
+podman run --name portal-payments --hostname processed-at-vmware --detach --rm -p 8080:8080 --network skupper quay.io/redhatintegration/patient-portal-payment-processor:devnation</code></pre>
+</div>
+</div>
+<div class="paragraph">
+<p>OR</p>
+</div>
+</li>
+<li>
+<p>For ARM</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">podman run --name portal-database --detach --rm -p 5432:5432 --network skupper quay.io/redhatintegration/patient-portal-database-arm64:latest
+
+podman run --name portal-payments --hostname processed-at-vmware --detach --rm -p 8080:8080 --network skupper quay.io/redhatintegration/patient-portal-payment-processor-arm64:latest</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</li>
+<li>
+<p>Create a secure connection token on the <strong>OpenShift cluster</strong>. The router in the OpenShift Virtualization environment will use this token to establish a secure connection with the OpenShift cluster.</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">skupper token create secret_virt.token</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Display the token and copy it in a text editor</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">cat secret_virt.token</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create a file for the token on <strong>OpenShift Virtualization VM</strong> and copy the content of the token you copied.</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">vi secret_vmware.token</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Create the link by running the following command in <strong>Hypervisor VM</strong></p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">skupper link create secret_virt.token --name virt-to-openshift</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Expose the database and payment processor over the network by running this command in <strong>OpenShift Virtualization VM</strong> . The skupper expose command makes this service accessible across the Service Interconnect network.</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">skupper expose host portal-database --address database --port 5432
+
+skupper expose host portal-payments --address payment-processor --port 8080 --protocol http</code></pre>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>Assume this as the transitioning stage, where we have services running on both the Hypervisor and OpenShift Virtualization, simultaneously. Red Hat Service Interconnect automatically load balances traffic between the two environments. The developers can also control where the majority of the traffic is sent based by assigning costs to the network links.</p>
+</div>
+<div class="paragraph">
+<p>After thorough testing, the development team concludes that they can now switch 100% of the traffic to the OpenShift Virtualization environment. They could either do this by bringing down the services on the VM or breaking the link between the Hypervisor and OpenShift cluster. This pattern show cases the latter. Once this is done Service Interconnect will automatically detect failure and redirect traffic to the OpenShift Virtualization environment</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Delete the link between the Hypervisor and OpenShift cluster by running this command from the <strong>Hypervisor VM</strong>.</p>
+<div class="listingblock console-input">
+<div class="content">
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">skupper delete</code></pre>
+</div>
+</div>
+</li>
+<li>
+<p>Go back to the frontend of the patient portal and try to make a payment for any another patient, say Kevin Malone. The processor field should now reflect that that is being processed at the OpenShift Virtualization environment.</p>
+<div class="imageblock">
+<div class="content">
+<img src="_images/openshift_virt_payment.png" alt="openshift virt payment" width="70%">
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>This shows that the migration of the services from the Hypervisor to OpenShift Virtualization has been successful, without any disruption to the patient portal. Red Hat Service Interconnect has seamlessly switched the traffic to the OpenShift Virtualization environment, without any additional configuration or changes to the patient portal.</p>
 </div>
 </div>
 </div>

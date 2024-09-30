@@ -13,52 +13,44 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body class="article">
-<!-- Google tag (gtag.js) -->
-
-<!--
-  replace this with Google tag content
--->
-
-<!-- Google tag (gtag.js) -->
 <header class="header">
-
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" style="font-size: 20px; color: white"
         href="https://redhat-solution-patterns.github.io/solution-patterns">
         <img src="../_/img/logo.png" height="35px" alt="Solution Patterns">&nbsp; Solution Patterns for Cloud Native Architectures</a>
       <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Architectures &amp; Patterns</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://www.redhat.com/architect/portfolio/" target="_blank">Portfolio Architecture&nbsp; </a>
+            <a class="navbar-item" href="https://redhat-solution-patterns.github.io/solution-patterns/patterns.html"  target="_blank">Solution Patterns </a>
+            <a class="navbar-item" href="https://validatedpatterns.io/" target="_blank">Validated Patterns&nbsp;</a>
+            <a class="navbar-item" href="https://catalog.redhat.com/solutions" target="_blank">Ecosystem Solutions&nbsp;</a>
+          </div>
+        </div>
 
-    <div class="navbar-item"><span class="navbar-text"
-        style="color: white; margin-left: 1rem; margin-right: 1rem;">|</span></div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" target="_blank" href="https://developers.redhat.com">Red Hat Developers</a>
+            <a class="navbar-item" target="_blank" href="https://developers.redhat.com/app-dev-platform">App Dev Platform</a>
+            <a class="navbar-item" target="_blank" href="https://www.redhat.com/en/products/application-foundations">Red Hat Application Services</a>
+          </div>
+        </div>
 
-    <div class="navbar-item has-dropdown is-hoverable">
-      <a class="navbar-link" href="#" style="color: white">Architectures &amp; Patterns</a>
-      <div class="navbar-dropdown">
-        <a class="navbar-item" href="https://www.redhat.com/architect/portfolio/" target="_blank">Portfolio Architecture&nbsp; </a>
-        <a class="navbar-item" href="https://redhat-solution-patterns.github.io/solution-patterns/patterns.html" target="_blank">Solution Patterns </a>
-        <a class="navbar-item" href="https://validatedpatterns.io/" target="_blank">Validated Patterns&nbsp;</a>
-        <a class="navbar-item" href="https://catalog.redhat.com/solutions" target="_blank">Ecosystem Solutions&nbsp;</a>
+          <a class="navbar-item" target="_blank" href="https://github.com/redhat-solution-patterns/redhat-solution-patterns.github.io/issues">Feedback</a>
+          <a class="navbar-item" target="_blank" href="https://redhat-solution-patterns.github.io/solution-patterns/contributors-guide.html">Contribute</a>
+
       </div>
     </div>
-
-    <div class="navbar-item has-dropdown is-hoverable">
-      <a class="navbar-link" href="#" style="color: white">Resources</a>
-      <div class="navbar-dropdown">
-        <a class="navbar-item" target="_blank" href="https://developers.redhat.com">Red Hat Developers</a>
-        <a class="navbar-item" target="_blank" href="https://developers.redhat.com/app-dev-platform">App Dev Platform</a>
-        <a class="navbar-item" target="_blank" href="https://www.redhat.com/en/products/application-foundations">Red Hat Application Services</a>
-      </div>
-    </div>
-
-
-
-    <a class="navbar-item" style="color: white" target="_blank" href="https://github.com/redhat-solution-patterns/redhat-solution-patterns.github.io/issues">Feedback</a>
-
-    <a class="navbar-item" style="color: white" target="_blank" href="https://redhat-solution-patterns.github.io/solution-patterns/contributors-guide.html">Contribute</a>
-
   </nav>
 </header>
 <div class="body">
@@ -186,7 +178,7 @@
     <li><a href="02-architecture.html">2. Architecture</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/redhat-solution-patterns/solution-pattern-website-template/edit/main/documentation/modules/ROOT/pages/02-architecture.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/rpscodes/solution-pattern-interconnect-virt/edit/main/documentation/modules/ROOT/pages/02-architecture.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
@@ -200,7 +192,22 @@ Introduction for the architecture of this solution pattern.
 <div class="sect1">
 <h2 id="_common_challenges"><a class="anchor" href="#_common_challenges"></a><a class="link" href="#_common_challenges">1. Common Challenges</a></h2>
 <div class="sectionbody">
-
+<div class="paragraph">
+<p>When moving applications or service across environments, there are a number of common challenges that enterprise organizations must address. Below are some of the common challenges:</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p><strong>Minimizing Downtime</strong>: Keep downtime to a minimum while maintaining service continuity. Ideally enterprises would prefer to have as little downtime as possible while maintaining service continuity.</p>
+</li>
+<li>
+<p><strong>Reducing Complexity</strong>: Reducing the complexity of setting up and managing complex networking systems, such as firewalls and routing, VPNs to connect the older environments to the new ones, during the transition</p>
+</li>
+<li>
+<p><strong>Avoid Application Level Changes</strong>: When the services are migrated to the new platform, the applications must be able to communicate with each other using the same service address.</p>
+</li>
+</ul>
+</div>
 </div>
 </div>
 <div class="sect1">
@@ -209,40 +216,14 @@ Introduction for the architecture of this solution pattern.
 <div class="ulist">
 <ul>
 <li>
-<p>Red Hat supported products</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.redhat.com/en/technologies/cloud-computing/openshift">Red Hat OpenShift</a></p>
+<p><a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/virtualization">Red Hat OpenShift Virtualization</a>: Red Hat® OpenShift® Virtualization, provides a modern platform for organizations to run and deploy their new and existing virtual machine (VM) workloads. It allows for easy migration and management of traditional virtual machines onto a trusted, consistent, and comprehensive hybrid cloud application platform. OpenShift Virtualization offers a path for infrastructure modernization and aims to preserve existing virtualization investments while embracing modern management principles.</p>
 </li>
 <li>
-<p>Red Hat Application Foundation</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://access.redhat.com/products/quarkus">Quarkus</a></p>
+<p><a href="https://developers.redhat.com/products/service-interconnect/overview">Red Hat Service Interconnect</a>: Red Hat Service Interconnect simplifies application connectivity across the hybrid cloud. Unlike traditional means of connectivity (such as VPNs combined with complex firewall rules), development teams can easily create interconnections across different environments without compromising the organization&#8217;s security or data.
+Applications and services across environments can communicate with each other using Red Hat Service Interconnect as if they were all running in the same site. This connectivity can be maintained even as applications are migrated between environments.</p>
 </li>
 <li>
-<p><a href="https://www.redhat.com/en/technologies/cloud-computing/openshift/openshift-streams-for-apache-kafka">Kafka Streams</a></p>
-</li>
-</ul>
-</div>
-</li>
-</ul>
-</div>
-</li>
-<li>
-<p>Other open source products:</p>
-<div class="ulist">
-<ul>
-<li>
-<p><a href="https://www.postgresql.org/">PostgreSQL database</a></p>
-</li>
-<li>
-<p><a href="https://helm.sh/">Helm</a></p>
-</li>
-</ul>
-</div>
+<p><a href="https://www.redhat.com/en/technologies/cloud-computing/openshiftm">Red Hat OpenShift</a>: Red Hat® OpenShift® is a trusted, comprehensive, and consistent platform to develop, modernize, and deploy applications at scale, including today’s AI-enabled apps. Innovate faster with a complete set of services for bringing apps to market on your choice of infrastructure.</p>
 </li>
 </ul>
 </div>
@@ -252,159 +233,47 @@ Introduction for the architecture of this solution pattern.
 <h2 id="in_depth"><a class="anchor" href="#in_depth"></a><a class="link" href="#in_depth">3. An in-depth look at the solution&#8217;s architecture</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Technical description including all or some of the following: architecture ir ed diagrams. In-depth details of the decisions made and solutions used. Description of each service and what it is used for. Description of any integration.</p>
+<p>InstaMedi&#8217;s patient portal application consists of 3 key components.</p>
 </div>
-<div class="sect2">
-<h3 id="_using_images"><a class="anchor" href="#_using_images"></a><a class="link" href="#_using_images">3.1. Using images</a></h3>
+<div class="ulist">
+<ul>
+<li>
+<p>Frontend - A web front-end service that uses the PostgreSQL database and a payment processor deployed in a private cluster to display the names of doctors and patients and process the payments.</p>
+</li>
+<li>
+<p>PostgreSQL database - Stores a list of patients, doctors and the bills owed by patients</p>
+</li>
+<li>
+<p>Payment Processor - To process the payments made by the patients and indicate the location (environment) where the payment was processed.</p>
+</li>
+</ul>
+</div>
+<div class="paragraph">
+<p>The frontend is deployed on an OpenShift cluster. Both the database and the payment processor are deployed on a VM running of one of the traditional hypervisor platform. InstaMedi, wants to migrate all the components from the traditional hypervisor platform to OpenShift virtualization, without having any downtime. Initially there are no components running on OpenShift Virtualization.</p>
+</div>
+<div class="paragraph">
+<p>The frontend is connected to the other components through a Virtual Application Network enabled by Red Hat Service Interconnect. Once a service is exposed over network, Service Interconnect router creates a virtual local service in the OpenShift environment. The frontend connects to these services as if they are local services and the router takes care of routing the call to the correct destination. The frontend is not aware of location of the actual services.</p>
+</div>
 <div class="imageblock">
 <div class="content">
-<img src="_images/red_hat_open-hybrid-cloud.png" alt="red hat open hybrid cloud" width="30%">
+<img src="_images/openshift_connected_to_vmware.png" alt="openshift connected to vmware" width="70%">
 </div>
 </div>
 <div class="paragraph">
-<p></p>
+<p>They gradually migrate the components one by one. This is how Instamedi&#8217;s environment would look like during the middle of the transitioning stage. All the instances on the database and payment service running on both the hypervisor platform and OpenShift Virtualization, are explicitly given the same service address on the network, so that they point to the same virtual service/proxy on the OpenShift cluster. This also ensures that no changes are made to the frontend since the service name that it refers to remains constant irrespective of where the database and payment processor components are deployed. The multicast capabilities of Service Interconnect ensure that the load is balanced between the two instances. This way Instamedi can have both the environment simultaneously running until they complete all the tests and are sure to decommission the old environment.</p>
 </div>
-</div>
-<div class="sect2">
-<h3 id="_embedding_html"><a class="anchor" href="#_embedding_html"></a><a class="link" href="#_embedding_html">3.2. Embedding HTML</a></h3>
-  <br>
-  <h3> Embed HTML by surrounding it with with four +s before and after. </h3>
-  <span>View the ascii doc to learn more</span>
-  <br>
-</div>
-<div class="sect2">
-<h3 id="_different_decorators"><a class="anchor" href="#_different_decorators"></a><a class="link" href="#_different_decorators">3.3. Different decorators</a></h3>
-<div class="admonitionblock tip">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-tip" title="Tip"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This is a Tip</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock note">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-note" title="Note"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This is a NOTE</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock warning">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-warning" title="Warning"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This is a WARNING</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-<div class="admonitionblock important">
-<table>
-<tr>
-<td class="icon">
-<i class="fa icon-important" title="Important"></i>
-</td>
-<td class="content">
-<div class="paragraph">
-<p>This is IMPORTANT</p>
-</div>
-</td>
-</tr>
-</table>
-</div>
-</div>
-<div class="sect2">
-<h3 id="_creating_tables"><a class="anchor" href="#_creating_tables"></a><a class="link" href="#_creating_tables">3.4. Creating  tables</a></h3>
-<table class="tableblock frame-all grid-all stretch">
-<colgroup>
-<col style="width: 33.3333%;">
-<col style="width: 33.3333%;">
-<col style="width: 33.3334%;">
-</colgroup>
-<tbody>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><strong>Column A</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p>Column <strong>A</strong></p>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="paragraph">
-<p><em>Column C</em></p>
-</div></div></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Lorem Ipsum</p>
-</li>
-<li>
-<p>Lorem Ipsum</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Lorem Ipsum</p>
-</li>
-<li>
-<p>Lorem Ipsum</p>
-</li>
-</ul>
-</div></div></td>
-<td class="tableblock halign-left valign-top"><div class="content"><div class="ulist">
-<ul>
-<li>
-<p>Lorem Ipsum</p>
-</li>
-<li>
-<p>Lorem Ipsum</p>
-</li>
-</ul>
-</div></div></td>
-</tr>
-</tbody>
-</table>
-</div>
-<div class="sect2">
-<h3 id="_content_that_can_be_copied"><a class="anchor" href="#_content_that_can_be_copied"></a><a class="link" href="#_content_that_can_be_copied">3.5. Content that can be copied</a></h3>
-<div class="paragraph">
-<p>Click below to copy the content</p>
-</div>
-<div class="listingblock console-input">
+<div class="imageblock">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-shell script hljs" data-lang="shell script">oc version #openshift cli client
-oc login --token=&lt;token&gt; --server=&lt;server&gt;</code></pre>
+<img src="_images/active_active_load.png" alt="active active load" width="70%">
 </div>
 </div>
-</div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="more_tech"><a class="anchor" href="#more_tech"></a><a class="link" href="#more_tech">4. About the Technology Stack</a></h2>
-<div class="sectionbody">
 <div class="paragraph">
-<p>If you want to include more details about the tech stack you used, this is the place.</p>
+<p>Finally, once the migration team is completely sure that everything is running smoothly, they can decommission the old environment. The network between the Openshift cluster and the traditional hypervisor platform is delete, using a single command. Once this is done, Service Interconnect automatically reroutes all the traffic to the service running in theOpenShift Virtualization environment. All this is done without making any changes to the frontend, database or the payment processor. In fact, the frontend team doesn&#8217;t even realise that a migration has happened, since there was no code change and no downtime.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="_images/failover_reroute.png" alt="failover reroute" width="70%">
+</div>
 </div>
 </div>
 </div>

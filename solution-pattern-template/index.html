@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width,initial-scale=1">
-    <title>Solution Patterns: Template Name :: Solution Patterns for Cloud Native Architectures</title>
+    <title>Solution Patterns: Minimize downtime when migrating your applications from hypervisor based environments to OpenShift Virtualization :: Solution Patterns for Cloud Native Architectures</title>
     <link rel="canonical" href="https://redhat-solution-patterns.github.io/solution-patterns/solution-pattern-template/index.html">
     <link rel="next" href="02-architecture.html">
     <meta name="generator" content="Antora 3.0.0">
@@ -12,52 +12,44 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   </head>
   <body class="article">
-<!-- Google tag (gtag.js) -->
-
-<!--
-  replace this with Google tag content
--->
-
-<!-- Google tag (gtag.js) -->
 <header class="header">
-
   <nav class="navbar">
     <div class="navbar-brand">
       <a class="navbar-item" style="font-size: 20px; color: white"
         href="https://redhat-solution-patterns.github.io/solution-patterns">
         <img src="../_/img/logo.png" height="35px" alt="Solution Patterns">&nbsp; Solution Patterns for Cloud Native Architectures</a>
       <button class="navbar-burger" data-target="topbar-nav">
+        <span></span>
+        <span></span>
+        <span></span>
       </button>
     </div>
+    <div id="topbar-nav" class="navbar-menu">
+      <div class="navbar-end">
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Architectures &amp; Patterns</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" href="https://www.redhat.com/architect/portfolio/" target="_blank">Portfolio Architecture&nbsp; </a>
+            <a class="navbar-item" href="https://redhat-solution-patterns.github.io/solution-patterns/patterns.html"  target="_blank">Solution Patterns </a>
+            <a class="navbar-item" href="https://validatedpatterns.io/" target="_blank">Validated Patterns&nbsp;</a>
+            <a class="navbar-item" href="https://catalog.redhat.com/solutions" target="_blank">Ecosystem Solutions&nbsp;</a>
+          </div>
+        </div>
 
-    <div class="navbar-item"><span class="navbar-text"
-        style="color: white; margin-left: 1rem; margin-right: 1rem;">|</span></div>
+        <div class="navbar-item has-dropdown is-hoverable">
+          <a class="navbar-link" href="#">Resources</a>
+          <div class="navbar-dropdown">
+            <a class="navbar-item" target="_blank" href="https://developers.redhat.com">Red Hat Developers</a>
+            <a class="navbar-item" target="_blank" href="https://developers.redhat.com/app-dev-platform">App Dev Platform</a>
+            <a class="navbar-item" target="_blank" href="https://www.redhat.com/en/products/application-foundations">Red Hat Application Services</a>
+          </div>
+        </div>
 
-    <div class="navbar-item has-dropdown is-hoverable">
-      <a class="navbar-link" href="#" style="color: white">Architectures &amp; Patterns</a>
-      <div class="navbar-dropdown">
-        <a class="navbar-item" href="https://www.redhat.com/architect/portfolio/" target="_blank">Portfolio Architecture&nbsp; </a>
-        <a class="navbar-item" href="https://redhat-solution-patterns.github.io/solution-patterns/patterns.html" target="_blank">Solution Patterns </a>
-        <a class="navbar-item" href="https://validatedpatterns.io/" target="_blank">Validated Patterns&nbsp;</a>
-        <a class="navbar-item" href="https://catalog.redhat.com/solutions" target="_blank">Ecosystem Solutions&nbsp;</a>
+          <a class="navbar-item" target="_blank" href="https://github.com/redhat-solution-patterns/redhat-solution-patterns.github.io/issues">Feedback</a>
+          <a class="navbar-item" target="_blank" href="https://redhat-solution-patterns.github.io/solution-patterns/contributors-guide.html">Contribute</a>
+
       </div>
     </div>
-
-    <div class="navbar-item has-dropdown is-hoverable">
-      <a class="navbar-link" href="#" style="color: white">Resources</a>
-      <div class="navbar-dropdown">
-        <a class="navbar-item" target="_blank" href="https://developers.redhat.com">Red Hat Developers</a>
-        <a class="navbar-item" target="_blank" href="https://developers.redhat.com/app-dev-platform">App Dev Platform</a>
-        <a class="navbar-item" target="_blank" href="https://www.redhat.com/en/products/application-foundations">Red Hat Application Services</a>
-      </div>
-    </div>
-
-
-
-    <a class="navbar-item" style="color: white" target="_blank" href="https://github.com/redhat-solution-patterns/redhat-solution-patterns.github.io/issues">Feedback</a>
-
-    <a class="navbar-item" style="color: white" target="_blank" href="https://redhat-solution-patterns.github.io/solution-patterns/contributors-guide.html">Contribute</a>
-
   </nav>
 </header>
 <div class="body">
@@ -185,21 +177,21 @@
     <li><a href="index.html">1. Home page</a></li>
   </ul>
 </nav>
-  <div class="edit-this-page"><a href="https://github.com/redhat-solution-patterns/solution-pattern-website-template/edit/main/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
+  <div class="edit-this-page"><a href="https://github.com/rpscodes/solution-pattern-interconnect-virt/edit/main/documentation/modules/ROOT/pages/index.adoc">Edit this Page</a></div>
   </div>
   <div class="content">
 <article class="doc">
-<h1 class="page">Solution Patterns: Template Name</h1>
+<h1 class="page">Solution Patterns: Minimize downtime when migrating your applications from hypervisor based environments to OpenShift Virtualization</h1>
 <div id="preamble">
 <div class="sectionbody">
 <div class="paragraph">
-<p>A brief introduction of this solution pattern.</p>
+<p>Migrating applications from one platform to the other requires a thoughtful, phased approach. For example, let&#8217;s consider an enterprise is transitioning from transitioning from traditional hypervisor solutions like VMware vSphere to OpenShift Virtualization. Factors such as application dependencies, regulatory compliance, budget constraints, and resource availability often necessitate a phased migration approach to minimize disruption and maximize the benefits.  This gradual shift allows organizations to mitigate risks and ensure continuity while migrating to OpenShift virtualization. The traffic switchover from services running on existing hypervisor platforms to OpenShift Virtualization must be disruption-free with zero downtime. Additionally, connectivity to the existing VMs in the hypervisor needs to be maintained until all components are migrated.</p>
 </div>
 <div class="paragraph">
-<p><em>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum</em></p>
+<p>This solution pattern demonstrates how a locationless connectivity solution enabled by Red Hat Service interconnect can leveraged for a disruption free migration and switchover between environments (Vmware to Openshift Virtualization in this example) with almost zero downtime.</p>
 </div>
 <div class="paragraph">
-<p><strong>Contributors:</strong> <em>Your Name(s) here (can add links to your profile)</em></p>
+<p><strong>Contributors:</strong> <em>Vamsi Ravula (Red Hat)</em></p>
 </div>
  <br>
 <div class="admonitionblock note">
@@ -222,15 +214,18 @@
 <h2 id="use-cases"><a class="anchor" href="#use-cases"></a><a class="link" href="#use-cases">1. Use cases</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>Common use cases that can be address with this architecture are:</p>
+<p>Though this pattern deals with moving applications and services, from traditional hypervisor platforms such as VMware to OpenShift virtualization, the same concepts can be applied to number of other use cases such as the ones listed below:</p>
 </div>
 <div class="ulist">
 <ul>
 <li>
-<p>xyz</p>
+<p>Migration from an older version of OpenShift/Kubernetes to a newer version. Ex: OpenShift 3 to 4 migration</p>
 </li>
 <li>
-<p>xyz</p>
+<p>Distributing and moving services across multiple kubernetes clusters (cloud or on-prem)without any downtime</p>
+</li>
+<li>
+<p>Moving applications across different kubernetes offerings. Ex: Vanilla kubernetes to OpenShift, AKS/EKS to OpenShift</p>
 </li>
 </ul>
 </div>
@@ -240,7 +235,10 @@
 <h2 id="_the_story_behind_this_solution_pattern"><a class="anchor" href="#_the_story_behind_this_solution_pattern"></a><a class="link" href="#_the_story_behind_this_solution_pattern">2. The story behind this solution pattern</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>A description of the story that was used to build the demo and architectures of this SP.</p>
+<p>InstaMedi, a fictional health tech company that builds portal for patients and doctors for its group of hospitals, has decided to move it&#8217;s applications from a traditional hypervisor platform to Red Hat OpenShift Virtualization. This enables them to have a platform that addresses their current needs while also preparing them for future modernization and change all while enhancing the operational efficiency. Red Hat OpenShift Virtualization offers a compelling solution by allowing organizations to run both virtual machines (VMs) and containers on a single, unified platform. By migrating virtual machines from other platforms and running them on Red Hat OpenShift, they could get the most from their existing virtualization investments while taking advantage of cloud-native architectures, streamlined operations and management, and new development approaches.</p>
+</div>
+<div class="paragraph">
+<p>To ensure a smooth transition from traditional hypervisors like VMware vSphere to Red Hat OpenShift Virtualization, InstaMedi must adopt a phased migration strategy that minimizes downtime and disruption to its healthcare services. Given the critical nature of patient and doctor portals, maintaining uninterrupted access is essential. The traffic switchover from the services in the existing hypervisor to OpenShift Virtualization will be handled carefully to ensure zero downtime. This involves gradually redirecting traffic to services running on OpenShift virtualization while maintaining connectivity to the original VMs until the full migration is complete. Additionally, InstaMedi aims to reduce the complexity involved in building and managing complex networking systems. By doing so, InstaMedi can mitigate risks, maintain service continuity, and avoid disruptions to daily operations, all while efficiently transitioning to a more modern and scalable infrastructure.</p>
 </div>
 </div>
 </div>
@@ -248,7 +246,16 @@
 <h2 id="_the_solution"><a class="anchor" href="#_the_solution"></a><a class="link" href="#_the_solution">3. The Solution</a></h2>
 <div class="sectionbody">
 <div class="paragraph">
-<p>This is a summary of the solution</p>
+<p>InstaMedi decided to use implement <strong>Red Hat Service Interconnect</strong> as a key component of its migration strategy to simplify connectivity across its diverse environments. By leveraging the advanced Layer 7 addressing and routing capabilities of Service Interconnect, InstaMedi ensured seamless communication between its applications during and after the migration process. This solution allowed their applications to communicate effortlessly across both the traditional hypervisor platform and OpenShift Virtualization, even as components were gradually moved or updated. Service Interconnect&#8217;s anycast/multicast capabilities, enabled multiple instances of a service deployed in different destinations to use the same service address. This streamlined routing of requests to instances of a single service, regardless of whether they were running - original hypervisor or OpenShift Virtualization. If a VM is disconnected or a service is undeployed post-migration, traffic is automatically and seamlessly switched over to newly migrated service instances that are using the same address, ensuring continuous operation without disruption.</p>
+</div>
+</div>
+</div>
+<div class="sect1">
+<h2 id="_additonal_context_and_resources"><a class="anchor" href="#_additonal_context_and_resources"></a><a class="link" href="#_additonal_context_and_resources">4. Additonal Context and Resources</a></h2>
+<div class="sectionbody">
+<div class="paragraph">
+<p>*
+* <a href="https://www.redhat.com/en/engage/15-reasons-adopt-openshift-virtualization-ebook">15-reasons-adopt-openshift-virtualization-ebook</a></p>
 </div>
 </div>
 </div>
