@@ -7,9 +7,6 @@
 
 == Demonstration
 
-Include here content related to potential existing demos: blogs, articles, recorded videos, walkthrough guides, tutorials.
-
-
 
 [#demo-video]
 === Watch a demonstration
