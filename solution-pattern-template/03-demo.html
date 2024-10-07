@@ -202,7 +202,7 @@
 <p>A similar virtual machine running RHEL 9 on OpenShift Virtualization. We will migrate the payment processor here. You can try it for free in the <a href="https://developers.redhat.com/products/openshift/virtualization">Red Hat Developer Sandbox</a></p>
 </li>
 <li>
-<p>Install podman on both the VMs to run the application containers.</p>
+<p>Install podman(v4 or greater) on both the VMs to run the application containers.</p>
 </li>
 <li>
 <p>An OpenShift cluster to deploy the frontend of the application.</p>
@@ -220,7 +220,7 @@
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -s <a href="https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/vmware_setup.sh" class="bare">https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/vmware_setup.sh</a></code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -s <a href="https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/vmware-setup.sh" class="bare">https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/vmware-setup.sh</a> | bash</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -228,7 +228,7 @@
 </div>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -s <a href="https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/openshift_virt_setup.sh" class="bare">https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/openshift_virt_setup.sh</a></code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">curl -s <a href="https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/openshift-virt-setup.sh" class="bare">https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/openshift-virt-setup.sh</a> | bash</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -271,7 +271,7 @@ skupper init --enable-console --enable-flow-collector --console-auth unsecured</
 <div class="sidebarblock">
 <div class="content">
 <div class="paragraph">
-<p>Service Interconnect router is the key component for establishing connectivity between sites and is installed in all the sites in the network The Communication across the network happens between the routers. Below are the key functions and attributes of the router:</p>
+<p>Service Interconnect router is the key component for establishing connectivity between sites and is installed in all the sites in the network. The Communication across the network happens between the routers. Below are the key functions and attributes of the router:</p>
 </div>
 <div class="ulist">
 <ul>
@@ -315,7 +315,7 @@ skupper init --enable-console --enable-flow-collector --console-auth unsecured</
 <div class="ulist">
 <ul>
 <li>
-<p>Creating a link between two environments(sites)requires explicit permission from the target site. This permission is granted using tokens. A token contains a URL for the target site and a secret key.</p>
+<p>Creating a link between two environments(sites) requires explicit permission from the target site. This permission is granted using tokens. A token contains a URL for the target site and a secret key.</p>
 </li>
 <li>
 <p>Tokens can be restricted to a chosen number of uses inside a limited time window. By default, tokens allow only one use and expire after 15 minutes.
@@ -482,7 +482,8 @@ skupper init</code></pre>
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">podman run --name portal-database --detach --rm -p 5432:5432 --network skupper quay.io/redhatintegration/patient-portal-database:devnation
 
-podman run --name portal-payments --hostname processed-at-vmware --detach --rm -p 8080:8080 --network skupper quay.io/redhatintegration/patient-portal-payment-processor:devnation</code></pre>
+
+podman run --name portal-payments --hostname processed-at-openshift-virt --detach --rm -p 8080:8080 --network skupper quay.io/redhatintegration/patient-portal-payment-processor:devnation</code></pre>
 </div>
 </div>
 <div class="paragraph">
@@ -495,7 +496,8 @@ podman run --name portal-payments --hostname processed-at-vmware --detach --rm -
 <div class="content">
 <pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">podman run --name portal-database --detach --rm -p 5432:5432 --network skupper quay.io/redhatintegration/patient-portal-database-arm64:latest
 
-podman run --name portal-payments --hostname processed-at-vmware --detach --rm -p 8080:8080 --network skupper quay.io/redhatintegration/patient-portal-payment-processor-arm64:latest</code></pre>
+
+podman run --name portal-payments --hostname processed-at-openshift-virt --detach --rm -p 8080:8080 --network skupper quay.io/redhatintegration/patient-portal-payment-processor-arm64:latest</code></pre>
 </div>
 </div>
 </li>
@@ -522,7 +524,7 @@ podman run --name portal-payments --hostname processed-at-vmware --detach --rm -
 <p>Create a file for the token on <strong>OpenShift Virtualization VM</strong> and copy the content of the token you copied.</p>
 <div class="listingblock console-input">
 <div class="content">
-<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">vi secret_vmware.token</code></pre>
+<pre class="highlightjs highlight"><code class="language-bash hljs" data-lang="bash">vi secret_virt.token</code></pre>
 </div>
 </div>
 </li>
