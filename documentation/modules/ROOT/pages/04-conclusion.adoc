@@ -1,8 +1,0 @@
-= Solution Pattern: Minimize downtime when migrating your applications from hypervisor based environments to OpenShift Virtualization
-:sectnums:
-:sectlinks:
-:doctype: book
-
-= Conclusion
-
-Through this solution pattern we've seen how Red Hat's integrated approach with OpenShift Virtualization and Service Interconnect provides a practical solution for gradually migrating VMs from hypervisor platforms such as vSphere to OpenShift virtualization. Service Interconnect plays a pivotal role by ensuring continuous service availability and connectivity during migrations. By leveraging Service Interconnect alongside OpenShift Virtualization, organizations can navigate hybrid cloud environments with confidence, ultimately achieving greater agility and operational efficiency.
