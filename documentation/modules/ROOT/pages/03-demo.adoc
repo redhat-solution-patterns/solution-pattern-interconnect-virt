@@ -37,21 +37,21 @@ Hypervisor VM:
 [.console-input]
 [source, bash,subs="+macros,+attributes"]
 ---- 
-curl -s https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/vmware-setup.sh | bash
+curl -s https://raw.githubusercontent.com/redhat-solution-patterns/solution-pattern-interconnect-virt/refs/heads/main/setup/vmware-setup.sh | bash
 ----
 
 OpenShift Virtualization:
 [.console-input]
 [source, bash,subs="+macros,+attributes"]
 ---- 
-curl -s https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/openshift-virt-setup.sh | bash
+curl -s https://raw.githubusercontent.com/redhat-solution-patterns/solution-pattern-interconnect-virt/refs/heads/main/setup/openshift-virt-setup.sh | bash
 ----
 
 OpenShift cluster:
 [.console-input]
 [source, bash,subs="+macros,+attributes"]
 ---- 
-curl -s https://raw.githubusercontent.com/rpscodes/solution-pattern-interconnect-virt/refs/heads/main/setup/openshift-cluster-setup.sh | bash
+curl -s https://raw.githubusercontent.com/redhat-solution-patterns/solution-pattern-interconnect-virt/refs/heads/main/setup/openshift-cluster-setup.sh | bash
 ----
 
 
